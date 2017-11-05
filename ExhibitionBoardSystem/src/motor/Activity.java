@@ -14,4 +14,20 @@ public class Activity {
         //TODO
         return data;
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getTime() {
+        return this.time;
+    }
+
+    public Organizations getOrganizations() {
+        return this.organizations;
+    }
+
+    public String getSlogan() {
+        return this.slogan;
+    }
 }

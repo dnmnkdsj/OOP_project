@@ -24,11 +24,11 @@ public class Organization {
     }
 
     public ArrayList<String> getMembers() {
-        return members;
+        return this.members;
     }
 
     public Activities getActivities() {
-        return activities;
+        return this.activities;
     }
 
 }
