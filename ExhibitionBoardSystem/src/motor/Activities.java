@@ -6,7 +6,7 @@ public class Activities {
     private ArrayList<Activity> activities;
 
     public Activities() {
-        //todo initalize a activity arraylist with empty attributes
+        ArrayList<Activity> activities = new ArrayList<Activity>();
     }
 
     public Activity findByName(String name) {
@@ -16,7 +16,6 @@ public class Activities {
             }
         }
         System.out.printf("this name is not found in Activities.");
-        //todo can add an error exception
         return null;
     }
 
@@ -39,14 +38,17 @@ public class Activities {
     }
 
     public void deleteActivity(String name) {
-        //todo find out whether this code is correct
         this.activities.remove(findByName(name));
     }
 
     public ArrayList<Activity> rangeActivitiesByTime(String start_time, String end_time) {
         ArrayList<Activity> acts = this.activities;
         for (Activity act : acts) {
-            //todo delete all activities being not property.
+            if (Integer.valueOf(act.getTime()).intValue() < Integer.valueOf(start_time).intValue()) {
+                acts.remove(act);
+            } else if (Integer.valueOf(act.getTime()).intValue() > Integer.valueOf(end_time).intValue()) {
+                acts.remove(act);
+            }
         }
         return acts;
     }

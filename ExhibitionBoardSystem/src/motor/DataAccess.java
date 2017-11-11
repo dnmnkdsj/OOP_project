@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 public class DataAccess {
     private String url;
-    private ArrayList<String> columns;
-    private String head;
+    protected ArrayList<String> columns;
+    protected String head;
 
     public void setUrl(String new_url) {
         this.url = new_url;
@@ -22,9 +22,9 @@ public class DataAccess {
         return this.url;
     }
 
+    //open CSV file and get information into columns and head
     //IOException has no carrier
     public void readCSV(String url) throws IOException {
-        //todo open CSV file and get information into columns and head;
 
         File file = new File(url);
         System.out.printf("");
@@ -32,16 +32,21 @@ public class DataAccess {
         Scanner sc = new Scanner(file_stream,"UTF-8");
         String file_string =sc.useDelimiter("\\A").next();
         sc.close();
-//        System.out.printf(file_string);
+
         columns = splitColumn(file_string);
+        head = columns.get(1);
+        columns.remove(0);
+        columns.remove(0);
 //        for (String str : columns) {
 //            System.out.printf(str);
 //        }
+        //ArrayList<String> columns - one data
     }
 
-    //todo considering how to get the first column and put it as head
     private ArrayList<String> splitColumn(String input) {
-        ArrayList<String> output = new ArrayList<String>(Arrays.asList(input));
+        String[] columns = input.split("\r");
+//        System.out.print(columns.length);
+        ArrayList<String> output = new ArrayList<String>(Arrays.asList(columns));
         //split input into pieces and store them into Arraylist
         return output;
     }

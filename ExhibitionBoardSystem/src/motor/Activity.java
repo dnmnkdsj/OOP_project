@@ -11,12 +11,16 @@ public class Activity {
     //return Activity details
     public String showDetails() {
         String data = null;
-        //TODO
+        //TODO showDetails
         return data;
     }
 
     public String getName() {
         return this.name;
+    }
+
+    public String setName(String name) {
+        this.name = name;
     }
 
     public String getTime() {

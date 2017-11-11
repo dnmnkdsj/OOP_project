@@ -33,7 +33,7 @@ public class Organizations {
     }
 
     public void addOrganization(Organization newOrg) {
-        //todo add newOrg into arraylist
+        this.organizations.add(newOrg);
     }
 
     public void deleteOrganization(String name) {
