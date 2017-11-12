@@ -11,8 +11,21 @@ public class Activity {
     //return Activity details
     public String showDetails() {
         String data = null;
-        //TODO showDetails
+        //TODO showDetails1
         return data;
+    }
+
+    public Activity() { }
+
+    public Activity(String name, String time, String site,
+                    Organizations organizations,
+                    String slogan, String remark) {
+        this.name = name;
+        this.time = time;
+        this.site = site;
+        this.organizations = organizations;
+        this.slogan = slogan;
+        this.remark = remark;
     }
 
     public String getName() {

@@ -12,6 +12,10 @@ public class Organization {
     private Activities activities;
     private String introduction;
 
+    public Organization() {
+
+    }
+
     public Organization(String name, String time, String principal,
                         String phone, String email, ArrayList<String> members,
                         Activities activities, String introduction) {
@@ -34,6 +38,10 @@ public class Organization {
     //return Organizations's name
     public String getName() {
         return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public ArrayList<String> getMembers() {

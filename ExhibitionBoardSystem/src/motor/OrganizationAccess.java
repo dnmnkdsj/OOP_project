@@ -33,7 +33,7 @@ public class OrganizationAccess extends DataAccess {
         String email = columnData[4];
         ArrayList<String> members = new ArrayList<String>(Arrays.asList(columnData[5].split("、")));
         Activities activites = new Activities();
-        //todo these activities are not unique
+        //these activities are not unique
         String actString = columnData[5];
         String[] acts = actString.split("、");
         for (String act : acts) {
@@ -46,7 +46,11 @@ public class OrganizationAccess extends DataAccess {
         this.organizations.addOrganization(newOrg);
     }
 
-//    public void main(String[] args) {
+    public Organizations getOrganizations() {
+        return this.organizations;
+    }
+
+    //    public void main(String[] args) {
 //        DataAccess th = new DataAccess();
 //        initOrganization();
 //    }

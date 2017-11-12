@@ -1,26 +1,32 @@
 package control;
 
 import motor.Activities;
+import motor.ActivityAccess;
+import motor.OrganizationAccess;
 import motor.Organizations;
 
 public class Control {
     static private Organizations organizations;
     static private Activities activities;
 
-    public void showOrganizationList() {
+    public static void showOrganizationList() {
         System.out.print(organizations.getOrganizationList());
     }
 
-    public void showActivityList() {
+    public static void showActivityList() {
         System.out.print(activities.getActivityList());
     }
 
-    private void initOrganizatins() {
-        //todo
+    private static void initOrganizatins() {
+        OrganizationAccess oa = new OrganizationAccess();
+        oa.initOrganization();
+        organizations = oa.getOrganizations();
     }
 
-    private void initActivities() {
-        //todo
+    private static void initActivities() {
+        ActivityAccess aa = new ActivityAccess();
+        aa.initActivities();
+        activities = aa.getActivities();
     }
 
     public Control() {
@@ -31,6 +37,8 @@ public class Control {
 
     public static void main(String[] args) {
         Control control = new Control();
+        showActivityList();
+        showOrganizationList();
         //todo complete a controller that can control the system
     }
 }

@@ -6,7 +6,7 @@ public class Organizations {
     private ArrayList<Organization> organizations;
 
     public Organizations() {
-        //TODO initialize a Organizations class with no attribute
+        ArrayList<Organization> organizations = new ArrayList<Organization>(0);
     }
 
     public Organization findByName(String name) {
@@ -22,7 +22,7 @@ public class Organizations {
     public String getOrganizationList() {
         String data = null;
         for (Organization org : this.organizations) {
-            data +=org.getName();
+            data += org.getName();
             data += "/n";
         }
         return data;
@@ -37,7 +37,6 @@ public class Organizations {
     }
 
     public void deleteOrganization(String name) {
-        Organization del = findByName(name);
-        //todo delete del from arraylist
+        this.organizations.remove(findByName(name));
     }
 }
